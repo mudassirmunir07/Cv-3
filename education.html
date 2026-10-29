@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Mudassir Munir | Clix Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purpleBg: '#0F051D',
+                        purpleCard: '#1A0B2E',
+                        purpleBorder: '#3B1578',
+                        purpleDeep: '#2E1065',
+                        purpleMid: '#6B21A8',
+                        purpleBright: '#7C3AED',
+                        purpleGlow: '#A855F7',
+                        purpleLight: '#F3E8FF'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.08)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0F051D; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .nav-btn { position: relative; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .nav-btn:hover { transform: translateY(-4px) scale(1.12); color: #FFFFFF; text-shadow: 0 0 12px rgba(168, 85, 247, 0.9); }
+        .nav-btn::after { content: ''; position: absolute; bottom: -6px; left: 50%; width: 0%; height: 3px; background: linear-gradient(90deg, #7C3AED, #A855F7, #F3E8FF); border-radius: 99px; transition: all 0.35s ease; transform: translateX(-50%); box-shadow: 0 0 8px #A855F7; }
+        .nav-btn:hover::after, .nav-btn.active::after { width: 85%; }
+        .purple-glass { background: rgba(26, 11, 46, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body class="relative antialiased selection:bg-purpleGlow selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- BACKGROUND GLOWS -->
+    <div class="fixed top-10 left-10 w-[550px] h-[550px] bg-purpleMid/25 rounded-full blur-[140px] pointer-events-none animate-pulse-glow"></div>
+    <div class="fixed top-1/2 right-0 w-[500px] h-[500px] bg-purpleBright/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 w-full z-50 px-4 pt-4 pb-2">
+        <div class="max-w-6xl mx-auto">
+            <nav class="flex items-center justify-between px-6 py-3.5 rounded-2xl bg-purpleBg/85 backdrop-blur-xl border border-purpleBorder/50 shadow-2xl">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purpleMid via-purpleBright to-purpleGlow flex items-center justify-center text-white font-heading font-black text-xl shadow-lg shadow-purpleBright/40 group-hover:scale-110 transition-transform duration-300">MM</div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-base tracking-wider text-white group-hover:text-purpleGlow transition-colors leading-none">MUDASSIR MUNIR</span>
+                        <span class="text-[10px] text-purpleGlow font-semibold tracking-widest uppercase mt-0.5">Clix Solutions</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-7 text-sm font-semibold text-purpleLight/80">
+                    <a href="index.html" class="nav-btn py-1">Home</a>
+                    <a href="experience.html" class="nav-btn py-1">Experience</a>
+                    <a href="skills.html" class="nav-btn py-1">Skills</a>
+                    <a href="education.html" class="nav-btn active py-1">Education</a>
+                    <a href="profile.html" class="nav-btn py-1">Profile</a>
+                    <a href="contact.html" class="nav-btn py-1">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="contact.html" class="px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-purpleBright to-purpleGlow rounded-xl shadow-lg shadow-purpleBright/30 hover:scale-105 transition-all inline-block">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Get In Touch
+                    </a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-purpleLight p-2 focus:outline-none"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 purple-glass rounded-2xl border border-purpleBorder flex flex-col space-y-4 absolute left-4 right-4 z-50">
+                <a href="index.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Home</a>
+                <a href="experience.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Experience</a>
+                <a href="skills.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Skills</a>
+                <a href="education.html" class="text-white font-bold border-b border-purpleBorder/30 pb-2">Education</a>
+                <a href="profile.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Profile</a>
+                <a href="contact.html" class="text-purpleLight hover:text-white font-bold pb-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 py-12 my-auto w-full z-10">
+        <div class="text-center mb-8">
+            <span class="text-purpleGlow font-bold tracking-widest text-xs uppercase px-3 py-1 rounded-full bg-purpleBright/10 border border-purpleBright/20">Academic Background</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-black text-white mt-2">Education</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purpleBright to-purpleGlow mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <div class="relative border-l-2 border-purpleGlow/40 ml-4 md:ml-12 space-y-6">
+            <div class="relative pl-6 md:pl-10 group">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-gradient-to-tr from-purpleBright to-purpleGlow flex items-center justify-center text-white text-xs shadow-lg shadow-purpleBright/50">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="purple-glass p-6 rounded-2xl border border-purpleBorder">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-purpleBright/20 text-purpleGlow border border-purpleGlow/30">Enrolled • 5th Semester</span>
+                        <span class="text-xs font-semibold text-gray-400"><i class="fa-solid fa-university text-purpleGlow mr-1"></i> Qarshi University</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-1">BS Computer Science (BSCS)</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mt-2">Undertaking core computer science coursework including software engineering, data structures, algorithms, relational databases, and modern programming logic.</p>
+                </div>
+            </div>
+
+            <div class="relative pl-6 md:pl-10 group">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-purpleCard border-2 border-purpleGlow flex items-center justify-center text-purpleGlow text-xs">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="purple-glass p-6 rounded-2xl border border-purpleBorder">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-purpleBg/80 text-gray-300">Completed</span>
+                        <span class="text-xs font-semibold text-gray-400"><i class="fa-solid fa-school text-purpleGlow mr-1"></i> Beaconhouse ALJT</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-1">A Levels</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mt-2">Completed high school education focused on rigorous analytical reasoning, advanced sciences, and problem-solving methodologies.</p>
+                </div>
+            </div>
+
+            <div class="relative pl-6 md:pl-10 group">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-purpleCard border-2 border-purpleGlow flex items-center justify-center text-purpleGlow text-xs">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="purple-glass p-6 rounded-2xl border border-purpleBorder">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-purpleBg/80 text-gray-300">Completed</span>
+                        <span class="text-xs font-semibold text-gray-400"><i class="fa-solid fa-school text-purpleGlow mr-1"></i> Beaconhouse CSS</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-1">O Levels</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mt-2">Secondary school qualification establishing strong fundamental competencies in mathematics, science, and computer studies.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full border-t border-purpleBorder/40 py-4 px-6 bg-purpleBg/90 z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white font-heading font-black text-sm">MM</div>
+                <span class="font-heading font-bold text-sm text-white">Mudassir Munir <span class="text-purpleGlow font-normal">| Clix Solutions</span></span>
+            </div>
+            <p class="text-xs text-gray-400 text-center">&copy; 2026 Mudassir Munir. All rights reserved.</p>
+            <div class="flex items-center space-x-3">
+                <a href="mailto:mudassirmunir5@gmail.com" class="w-8 h-8 rounded-full bg-purpleBorder/40 hover:bg-purpleGlow hover:text-white flex items-center justify-center text-gray-300 transition-colors text-xs"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+923344623464" class="w-8 h-8 rounded-full bg-purpleBorder/40 hover:bg-purpleGlow hover:text-white flex items-center justify-center text-gray-300 transition-colors text-xs"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>

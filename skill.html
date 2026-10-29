@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Mudassir Munir</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <title>Skills - Mudassir Munir | Clix Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -26,6 +26,15 @@
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         heading: ['Outfit', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.08)' }
+                        }
                     }
                 }
             }
@@ -40,8 +49,12 @@
         .purple-glass { background: rgba(26, 11, 46, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
     </style>
 </head>
-<body class="relative antialiased selection:bg-purpleGlow selection:text-white min-h-screen flex flex-col justify-between">
+<body class="relative antialiased selection:bg-purpleGlow selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- BACKGROUND GLOWS -->
+    <div class="fixed top-10 left-10 w-[550px] h-[550px] bg-purpleMid/25 rounded-full blur-[140px] pointer-events-none animate-pulse-glow"></div>
+    <div class="fixed top-1/2 right-0 w-[500px] h-[500px] bg-purpleBright/20 rounded-full blur-[150px] pointer-events-none"></div>
 
+    <!-- NAVBAR -->
     <header class="sticky top-0 w-full z-50 px-4 pt-4 pb-2">
         <div class="max-w-6xl mx-auto">
             <nav class="flex items-center justify-between px-6 py-3.5 rounded-2xl bg-purpleBg/85 backdrop-blur-xl border border-purpleBorder/50 shadow-2xl">
@@ -61,11 +74,11 @@
                     <a href="contact.html" class="nav-btn py-1">Contact</a>
                 </div>
                 <div class="hidden md:block">
-                    <a href="contact.html" class="px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-purpleBright to-purpleGlow rounded-xl shadow-lg shadow-purpleBright/30 hover:scale-105 transition-all">
+                    <a href="contact.html" class="px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-purpleBright to-purpleGlow rounded-xl shadow-lg shadow-purpleBright/30 hover:scale-105 transition-all inline-block">
                         <i class="fa-solid fa-paper-plane mr-2"></i> Get In Touch
                     </a>
                 </div>
-                <button id="menu-btn" class="md:hidden text-purpleLight p-2"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
+                <button id="menu-btn" class="md:hidden text-purpleLight p-2 focus:outline-none"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
             </nav>
             <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 purple-glass rounded-2xl border border-purpleBorder flex flex-col space-y-4 absolute left-4 right-4 z-50">
                 <a href="index.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Home</a>
@@ -78,13 +91,15 @@
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-12 my-auto w-full">
+    <!-- MAIN CONTENT -->
+    <main class="max-w-5xl mx-auto px-4 py-12 my-auto w-full z-10">
         <div class="text-center mb-8">
             <span class="text-purpleGlow font-bold tracking-widest text-xs uppercase px-3 py-1 rounded-full bg-purpleBright/10 border border-purpleBright/20">Skill Inventory</span>
             <h2 class="text-3xl md:text-5xl font-heading font-black text-white mt-2">Core Skills & Expertise</h2>
             <p class="text-gray-400 mt-2 text-sm max-w-md mx-auto">Filter skills to inspect domain proficiency.</p>
         </div>
 
+        <!-- FILTER TABS -->
         <div class="flex justify-center gap-3 mb-8 flex-wrap">
             <button onclick="filterSkills('all')" class="skill-tab px-5 py-2 rounded-xl text-xs font-bold uppercase bg-purpleBright text-white" id="tab-all">All Skills</button>
             <button onclick="filterSkills('marketing')" class="skill-tab px-5 py-2 rounded-xl text-xs font-bold uppercase purple-glass text-gray-300" id="tab-marketing">Marketing</button>
@@ -92,63 +107,73 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
-            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
-                        <i class="fa-brands fa-google"></i>
+            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Advanced</span>
                     </div>
-                    <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Advanced</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Running Google Ads</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">Campaign setup, keyword bidding, conversion tracking pixels, remarketing lists, and ad creative optimization.</p>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Running Google Ads</h3>
-                <p class="text-gray-300 text-xs leading-relaxed mb-4">Campaign setup, keyword bidding, conversion tracking pixels, remarketing lists, and continuous ad creative optimization.</p>
                 <div class="w-full bg-purpleBg h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-purpleBright to-purpleGlow h-full w-[92%] rounded-full"></div></div>
             </div>
 
-            <div class="skill-card technical marketing purple-glass p-6 rounded-3xl relative">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
-                        <i class="fa-solid fa-robot"></i>
+            <div class="skill-card technical marketing purple-glass p-6 rounded-3xl relative flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Specialist</span>
                     </div>
-                    <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Specialist</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Making Automations</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">Connecting Zapier/Make scripts, CRM lead routing, automatic follow-up emails, and instant client notification systems.</p>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Making Automations</h3>
-                <p class="text-gray-300 text-xs leading-relaxed mb-4">Connecting Zapier/Make scripts, CRM lead routing, automatic follow-up emails, and instant client notification systems.</p>
                 <div class="w-full bg-purpleBg h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-purpleBright to-purpleGlow h-full w-[88%] rounded-full"></div></div>
             </div>
 
-            <div class="skill-card technical purple-glass p-6 rounded-3xl relative">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
-                        <i class="fa-solid fa-file-excel"></i>
+            <div class="skill-card technical purple-glass p-6 rounded-3xl relative flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-file-excel"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Expert</span>
                     </div>
-                    <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Expert</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Microsoft Excel</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">Advanced formulas, Pivot tables, campaign dashboards, revenue forecasting, and financial data modeling.</p>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Microsoft Excel</h3>
-                <p class="text-gray-300 text-xs leading-relaxed mb-4">Advanced formulas, Pivot tables, campaign performance dashboards, revenue forecasting, and financial data modeling.</p>
                 <div class="w-full bg-purpleBg h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-purpleBright to-purpleGlow h-full w-[95%] rounded-full"></div></div>
             </div>
 
-            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
-                        <i class="fa-solid fa-filter"></i>
+            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Advanced</span>
                     </div>
-                    <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Advanced</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Making Funnels</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">Designing lead capture pages, value proposition messaging, upsell paths, and friction-free user acquisition pathways.</p>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Making Funnels</h3>
-                <p class="text-gray-300 text-xs leading-relaxed mb-4">Designing lead capture pages, value proposition messaging, upsell paths, and friction-free user acquisition pathways.</p>
                 <div class="w-full bg-purpleBg h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-purpleBright to-purpleGlow h-full w-[86%] rounded-full"></div></div>
             </div>
 
-            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
-                        <i class="fa-solid fa-share-nodes"></i>
+            <div class="skill-card marketing purple-glass p-6 rounded-3xl relative flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Proficient</span>
                     </div>
-                    <span class="text-xs font-extrabold text-purpleGlow bg-purpleBright/10 px-3 py-1 rounded-full border border-purpleBright/20">Proficient</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Social Media Management</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed mb-4">Content strategy planning, brand design consistency, audience growth tactics, and cross-platform publishing execution.</p>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Social Media Management</h3>
-                <p class="text-gray-300 text-xs leading-relaxed mb-4">Content strategy planning, brand design consistency, audience growth tactics, and cross-platform publishing execution.</p>
                 <div class="w-full bg-purpleBg h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-purpleBright to-purpleGlow h-full w-[88%] rounded-full"></div></div>
             </div>
 
@@ -165,7 +190,8 @@
         </div>
     </main>
 
-    <footer class="w-full border-t border-purpleBorder/40 py-4 px-6 bg-purpleBg/90">
+    <!-- FOOTER -->
+    <footer class="w-full border-t border-purpleBorder/40 py-4 px-6 bg-purpleBg/90 z-10">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white font-heading font-black text-sm">MM</div>
