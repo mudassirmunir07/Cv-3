@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mudassir Munir</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purpleBg: '#0F051D',
+                        purpleCard: '#1A0B2E',
+                        purpleBorder: '#3B1578',
+                        purpleDeep: '#2E1065',
+                        purpleMid: '#6B21A8',
+                        purpleBright: '#7C3AED',
+                        purpleGlow: '#A855F7',
+                        purpleLight: '#F3E8FF'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0F051D; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .nav-btn { position: relative; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .nav-btn:hover { transform: translateY(-4px) scale(1.12); color: #FFFFFF; text-shadow: 0 0 12px rgba(168, 85, 247, 0.9); }
+        .nav-btn::after { content: ''; position: absolute; bottom: -6px; left: 50%; width: 0%; height: 3px; background: linear-gradient(90deg, #7C3AED, #A855F7, #F3E8FF); border-radius: 99px; transition: all 0.35s ease; transform: translateX(-50%); box-shadow: 0 0 8px #A855F7; }
+        .nav-btn:hover::after, .nav-btn.active::after { width: 85%; }
+        .purple-glass { background: rgba(26, 11, 46, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body class="relative antialiased selection:bg-purpleGlow selection:text-white min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 w-full z-50 px-4 pt-4 pb-2">
+        <div class="max-w-6xl mx-auto">
+            <nav class="flex items-center justify-between px-6 py-3.5 rounded-2xl bg-purpleBg/85 backdrop-blur-xl border border-purpleBorder/50 shadow-2xl">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purpleMid via-purpleBright to-purpleGlow flex items-center justify-center text-white font-heading font-black text-xl shadow-lg shadow-purpleBright/40 group-hover:scale-110 transition-transform duration-300">MM</div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-base tracking-wider text-white group-hover:text-purpleGlow transition-colors leading-none">MUDASSIR MUNIR</span>
+                        <span class="text-[10px] text-purpleGlow font-semibold tracking-widest uppercase mt-0.5">Clix Solutions</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-7 text-sm font-semibold text-purpleLight/80">
+                    <a href="index.html" class="nav-btn py-1">Home</a>
+                    <a href="experience.html" class="nav-btn py-1">Experience</a>
+                    <a href="skills.html" class="nav-btn py-1">Skills</a>
+                    <a href="education.html" class="nav-btn py-1">Education</a>
+                    <a href="profile.html" class="nav-btn py-1">Profile</a>
+                    <a href="contact.html" class="nav-btn active py-1">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="contact.html" class="px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-purpleBright to-purpleGlow rounded-xl shadow-lg shadow-purpleBright/30 hover:scale-105 transition-all">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Get In Touch
+                    </a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-purpleLight p-2"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 purple-glass rounded-2xl border border-purpleBorder flex flex-col space-y-4 absolute left-4 right-4 z-50">
+                <a href="index.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Home</a>
+                <a href="experience.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Experience</a>
+                <a href="skills.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Skills</a>
+                <a href="education.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Education</a>
+                <a href="profile.html" class="text-purpleLight hover:text-white font-bold border-b border-purpleBorder/30 pb-2">Profile</a>
+                <a href="contact.html" class="text-white font-bold pb-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12 my-auto w-full">
+        <div class="text-center mb-8">
+            <span class="text-purpleGlow font-bold tracking-widest text-xs uppercase px-3 py-1 rounded-full bg-purpleBright/10 border border-purpleBright/20">Direct Channel</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-black text-white mt-2">Get In Touch</h2>
+            <p class="text-gray-400 mt-2 text-sm max-w-md mx-auto">Ready to scale your business or discuss marketing opportunities? Connect with Mudassir.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div class="lg:col-span-2 space-y-4">
+                <a href="mailto:mudassirmunir5@gmail.com" class="block purple-glass p-5 rounded-2xl border border-purpleBorder group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purpleBright/20 text-purpleGlow flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="text-xs text-gray-400 uppercase font-bold">Email Address</p>
+                            <p class="text-white font-bold text-xs sm:text-sm truncate">mudassirmunir5@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="tel:+923344623464" class="block purple-glass p-5 rounded-2xl border border-purpleBorder group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purpleBright/20 text-purpleGlow flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase font-bold">Phone / WhatsApp</p>
+                            <p class="text-white font-bold text-base">+92 3344623464</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="purple-glass p-5 rounded-2xl border border-purpleBorder">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purpleBright/20 text-purpleGlow flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase font-bold">Location</p>
+                            <p class="text-white font-bold text-base">Lahore, Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-purpleMid via-purpleDeep to-purpleCard border border-purpleGlow/30 text-white">
+                    <h4 class="font-heading font-extrabold text-lg mb-1">Clix Solutions</h4>
+                    <p class="text-xs text-purpleLight/90 mb-4">Inquire regarding Google Ads management, landing page funnels, or marketing automation builds.</p>
+                    <a href="mailto:mudassirmunir5@gmail.com?subject=Clix Solutions Inquiry" class="inline-flex items-center text-xs font-bold text-white uppercase tracking-wider hover:underline">
+                        Partner with Clix Solutions <i class="fa-solid fa-arrow-right ml-2 text-purpleGlow"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 purple-glass p-6 md:p-8 rounded-3xl border border-purpleBorder relative">
+                <h3 class="text-xl font-heading font-bold text-white mb-6">Send a Message</h3>
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Full Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-purpleBg/80 border border-purpleBorder text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purpleGlow transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Email Address</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-purpleBg/80 border border-purpleBorder text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purpleGlow transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Subject</label>
+                        <input type="text" required placeholder="Google Ads / Funnel Build / Consulting" class="w-full px-4 py-3 rounded-xl bg-purpleBg/80 border border-purpleBorder text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purpleGlow transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Your Message</label>
+                        <textarea rows="4" required placeholder="Describe your project or marketing requirement..." class="w-full px-4 py-3 rounded-xl bg-purpleBg/80 border border-purpleBorder text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purpleGlow transition-all"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-gradient-to-r from-purpleBright to-purpleGlow hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+                        <span>Submit Inquiry</span>
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+
+                <div id="form-success" class="hidden absolute inset-0 bg-purpleBg/95 backdrop-blur-xl rounded-3xl flex flex-col items-center justify-center p-6 text-center z-30">
+                    <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-2">Message Sent!</h4>
+                    <p class="text-gray-300 text-xs max-w-xs mb-6">Thank you for reaching out. Mudassir will reply directly via email shortly.</p>
+                    <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl bg-purpleBorder text-white text-xs font-bold uppercase tracking-wider">
+                        Send Another Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-purpleBorder/40 py-4 px-6 bg-purpleBg/90">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purpleMid to-purpleBright flex items-center justify-center text-white font-heading font-black text-sm">MM</div>
+                <span class="font-heading font-bold text-sm text-white">Mudassir Munir <span class="text-purpleGlow font-normal">| Clix Solutions</span></span>
+            </div>
+            <p class="text-xs text-gray-400 text-center">&copy; 2026 Mudassir Munir. All rights reserved.</p>
+            <div class="flex items-center space-x-3">
+                <a href="mailto:mudassirmunir5@gmail.com" class="w-8 h-8 rounded-full bg-purpleBorder/40 hover:bg-purpleGlow hover:text-white flex items-center justify-center text-gray-300 transition-colors text-xs"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+923344623464" class="w-8 h-8 rounded-full bg-purpleBorder/40 hover:bg-purpleGlow hover:text-white flex items-center justify-center text-gray-300 transition-colors text-xs"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('submit-btn').innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Submitting...`;
+            setTimeout(() => {
+                document.getElementById('form-success').classList.remove('hidden');
+            }, 700);
+        }
+
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('submit-btn').innerHTML = `<span>Submit Inquiry</span> <i class="fa-solid fa-paper-plane text-sm"></i>`;
+            document.getElementById('form-success').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
